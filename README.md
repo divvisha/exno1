@@ -21,7 +21,7 @@ STEP 6: Use zscore of to remove outliers
    df=pd.read_csv("/content/SAMPLEIDS.csv")
    df
    ~~~
-   ![Screenshot 2024-09-25 101714](https://github.com/user-attachments/assets/514e7e0b-34c0-44e6-805c-c140dfcceb93)
+![Screenshot 2024-11-12 215322](https://github.com/user-attachments/assets/7f408fab-8aec-4ef3-8b4d-5ddb4803a25b)
    ~~~
    df.shape
 ~~~
@@ -29,11 +29,11 @@ STEP 6: Use zscore of to remove outliers
    ~~~
    df.describe()
 ~~~
-   ![Screenshot 2024-09-25 101842](https://github.com/user-attachments/assets/1eeb3999-4e42-430c-8310-2acf6a0c6ba3)
+![Screenshot 2024-11-12 215333](https://github.com/user-attachments/assets/1264cd6f-6268-41ec-93ff-4f2ac5d8ad71)
    ~~~
    df.info()
 ~~~
-   ![Screenshot 2024-09-25 101911](https://github.com/user-attachments/assets/e5f3b23f-de92-4f89-aa8f-a52e34000e9a)
+![Screenshot 2024-11-12 215340](https://github.com/user-attachments/assets/18754492-5b5a-4ec6-a5ce-0678ec3c90d9)
 ~~~
    df.head(3)
    df.tail(3)
@@ -42,7 +42,7 @@ STEP 6: Use zscore of to remove outliers
    ~~~
    df.isnull().sum()
    ~~~
-   ![Screenshot 2024-09-25 102021](https://github.com/user-attachments/assets/345a0c64-e125-4996-b289-35d4ddbea226)
+![Screenshot 2024-11-12 215350](https://github.com/user-attachments/assets/52f5c301-64d7-455c-81d9-c9df8808452c)
    ~~~
    df.dropna(how='any').shape
 ~~~
@@ -55,7 +55,7 @@ STEP 6: Use zscore of to remove outliers
    x=df.dropna(how='any')
    x
    ~~~
-   ![Screenshot 2024-09-25 102705](https://github.com/user-attachments/assets/6f39f743-b400-425c-9b2a-7321339dfba1)
+![Screenshot 2024-11-12 215359](https://github.com/user-attachments/assets/26ff49a3-9013-445c-bb2a-9e1a3718d980)
    ~~~
    x2=df.dropna(how='all').shape
    mn=df.TOTAL.mean()
@@ -66,16 +66,16 @@ STEP 6: Use zscore of to remove outliers
    df.TOTAL.fillna(mn,inplace=True)
    df
 ~~~
-   ![Screenshot 2024-09-25 102843](https://github.com/user-attachments/assets/97dccd07-fb31-419c-b7ad-e1c014833a64)
+![Screenshot 2024-11-12 215407](https://github.com/user-attachments/assets/82df7255-ab3e-442a-ba2c-0da4420d8fd4)
    ~~~
    df['M1']
 ~~~
-   ![Screenshot 2024-09-25 102925](https://github.com/user-attachments/assets/851aabcc-1d34-4da5-b1c6-76ad0d5ee914)
+![Screenshot 2024-11-12 215415](https://github.com/user-attachments/assets/696a3d90-8fec-4cda-b05b-e74ca1366242)
    ~~~
    l=df.M1.interpolate()
    l
 ~~~
-   ![Screenshot 2024-09-25 103005](https://github.com/user-attachments/assets/fe8d32da-65d4-4840-ba08-4759b4645081)
+![Screenshot 2024-11-12 215421](https://github.com/user-attachments/assets/04cc1cfa-cc35-488b-9907-27b1a579f0f1)
    ~~~
    df.M1.fillna(method='FFill',inplace=True)
 ~~~
@@ -83,11 +83,11 @@ STEP 6: Use zscore of to remove outliers
    ~~~
    df.isna().sum()
 ~~~
-   ![Screenshot 2024-09-25 103117](https://github.com/user-attachments/assets/a723760a-2687-4d0a-8a4f-6dbc54c83065)
+![Screenshot 2024-11-12 215430](https://github.com/user-attachments/assets/5dd7aa51-c5d0-4a07-b543-30820457c261)
    ~~~
    df.duplicated()
 ~~~
-   ![Screenshot 2024-09-25 103156](https://github.com/user-attachments/assets/cdc5f6c5-6ac3-425e-a5d0-7ea0cced5085)
+![Screenshot 2024-11-12 215439](https://github.com/user-attachments/assets/dad65c8f-ae76-47ba-a910-a06dd275d2b5)
    ~~~
    df.drop_duplicates(inplace=True)
    df.duplicated()
@@ -97,12 +97,12 @@ STEP 6: Use zscore of to remove outliers
    import seaborn as sns
    sns.heatmap(df.isnull(),yticklabels=False, annot=True)
 ~~~
-   ![Screenshot 2024-09-25 103458](https://github.com/user-attachments/assets/4e337176-fd19-4bf1-97ca-0b947c004d7c)
+![Screenshot 2024-11-12 215924](https://github.com/user-attachments/assets/410e2c24-b355-4199-a405-8fd024eba27e)
    ~~~
    df.dropna(inplace=True)
    sns.heatmap(df.isnull(),yticklabels=False, annot=True)
 ~~~
-   ![Screenshot 2024-09-25 103600](https://github.com/user-attachments/assets/e748141e-3d20-4a18-8c65-42f0a6b48acc)
+![Screenshot 2024-11-12 215933](https://github.com/user-attachments/assets/1ae54a10-9483-43c2-8736-1569c25373d1)
    ~~~
    df['DOB']
 ~~~
@@ -117,11 +117,11 @@ STEP 6: Use zscore of to remove outliers
    ~~~
    sns.boxplot(data=af)
 ~~~
-   ![image](https://github.com/user-attachments/assets/3a7614a7-0894-4403-9ba2-8505c07d7466)
+![Screenshot 2024-11-12 215941](https://github.com/user-attachments/assets/5dd8c65c-06d3-4ccb-968d-bf360ab77163)
    ~~~
    sns.scatterplot(data=af)
 ~~~
-   ![image](https://github.com/user-attachments/assets/e64670b5-7959-4a1e-a4ea-03b0065865b1)
+![Screenshot 2024-11-12 215947](https://github.com/user-attachments/assets/ba42fa26-72f6-40e4-a9e6-81598ccd619f)
    ~~~
    q1=af.quantile(0.25)
    q2=af.quantile(0.5)
@@ -151,7 +151,7 @@ STEP 6: Use zscore of to remove outliers
    ~~~
    sns.boxplot(data=af)
 ~~~
-   ![image](https://github.com/user-attachments/assets/32f85f7a-8d0d-46c8-8be7-a588e3bebfd6)
+![Screenshot 2024-11-12 215956](https://github.com/user-attachments/assets/d4ade610-bc07-47a5-8e47-0557e230696c)
    ~~~
    data=[1,2,2,2,3,1,1,15,2,2,2,3,1,1,2]
    mean=np.mean(data)
